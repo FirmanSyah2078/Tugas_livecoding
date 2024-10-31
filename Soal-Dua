@@ -9,32 +9,25 @@ struct rupiah : std::numpunct<char> {
 };
 
 int main() {
-
-    ///Inputkan berat masing-masing buah menggunakan keyboard.
     double apel, jeruk, semangka;
 
     cout << "Berat Apel (kg): "; cin >> apel;
     cout << "Berat Jeruk (kg): "; cin >> jeruk;
     cout << "Berat Semangka (kg): "; cin >> semangka;
 
-    //Inputkan harga masing-masing buah menggunakan keyboard.
     double tapel = apel * 24000;
     double tjeruk = jeruk * 16250 * 2;
     double tsemangka = semangka * 8000;
 
-    //Menghitung total berat semua buah.
     double totalBerat = apel + jeruk + semangka;
     cout << "\nTotal Berat Buah: " << totalBerat << " kg" << endl;
 
-    //Menghitung total harga semua buah.
     double totalHarga = tapel + tjeruk + tsemangka;
     cout.imbue(locale(locale(), new rupiah));
     cout << fixed << setprecision(2);
     cout << "Total Harga Buah: Rp. " << totalHarga << endl;
 
-    //Menghitung diskon
     cout << "\nDiskon : ";
-
     double diskon = 0.0;
     if (totalBerat > 10.0) {
         diskon = 0.05 * totalHarga;
@@ -45,10 +38,8 @@ int main() {
         cout << "Mendapatkan Diskon 2% (Berat > 8 Kg)";
     }
 
-    //Menghitung harga setelah diskon.
     double hargaSetelahDiskon = totalHarga - diskon;
 
-    // Pembulatan dua angka dibelakang koma.
     cout.imbue(locale(locale(), new rupiah));
     cout << fixed << setprecision(2);
     cout << "\nHarga Yang Harus Dibayar Okarun di Toko Buah : Rp. " << hargaSetelahDiskon << '\n' << endl;
