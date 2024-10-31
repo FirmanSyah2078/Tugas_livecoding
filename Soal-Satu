@@ -1,17 +1,22 @@
 #include <iostream>
 #include <cmath>
+
 using namespace std;
 
-void hitungEK() {
+void hitungEK(double massa, double kecepatan) {
+    double energiKinetik = 0.5 * massa * pow(kecepatan, 2);
+    cout << "\nEnergi Kinetik Sebesar : " << energiKinetik << " Joule" << endl;
+} 
 
-    double a, b;
+int main() {
+    double ms_sepeda, ms_andika, kecepatan;
 
-    cout << "Masukkan Input Massa (Kg) : "; cin >> a;
-    cout << "Masukkan Input Kecepatan (m/s) : "; cin >> b;
+    cout << "Masukkan Input Massa Sepeda (kg) : "; cin >> ms_sepeda;
+    cout << "Masukkan Input Massa Andika (kg) : "; cin >> ms_andika;
+    cout << "Masukkan Input Kecepatan (m/s) : "; cin >> kecepatan;
 
-    double kinetik = 0.5 * a * pow(b, 2);
-
-    cout << "\nEnergi Kinetik Sebesar : " << kinetik << " Joule";
+    double total_massa = ms_sepeda + ms_andika;
+    hitungEK(total_massa, kecepatan);
 
     return 0;
 }
