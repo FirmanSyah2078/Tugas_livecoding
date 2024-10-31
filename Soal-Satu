@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void hitungEK() {
+
+    double a, b;
+
+    cout << "Masukkan Input Massa (Kg) : "; cin >> a;
+    cout << "Masukkan Input Kecepatan (m/s) : "; cin >> b;
+
+    double kinetik = 0.5 * a * pow(b, 2);
+
+    cout << "\nEnergi Kinetik Sebesar : " << kinetik << " Joule";
+
+    return 0;
+}
